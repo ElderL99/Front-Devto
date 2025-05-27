@@ -24,27 +24,29 @@ const navItems = [
 export default function Sidebar() {
     const pathname = usePathname()
 
-    return (
-        <nav className="bg-white p-4 rounded-lg shadow">
-            {/* secion de crear cuenta / iniciar sesion */}
-            <div className="flex flex-col gap-3 items-center text-center">
-                <h1 className="text-2xl font-bold">
-                    DEV Community is a community of 3,171,657 amazing developers
-                </h1>
-                <p className="text-gray-500">
-                    We're a place where coders share, stay up-to-date and grow their careers.
-                </p>
-                <div className="mt-4 flex gap-2">
-                    <button href="#" className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                        Create account
-                    </button>
-                    <button href="/login" className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md">
-                        Log in
-                    </button>
-                </div>
-            </div>
+  
 
-            <ul className="space-y-1">
+    return (
+        <nav className=" flex flex-col gap-5 rounded-lg shadow">
+            {/* —————— Card de cuenta —————— */}
+      <div className="bg-white w-full p-4 rounded-lg shadow ">
+        <h1 className="text-xl font-bold mb-2 text-black">
+          DEV Community is a community of 3,171,657 amazing developers
+        </h1>
+        <p className="text-gray-500 mb-4">
+          We're a place where coders share, stay up-to-date and grow their careers.
+        </p>
+        <div className="flex flex-col gap-2">
+          <button className="w-full bg-blue-500 text-white px-4 py-2 rounded">
+            Create account
+          </button>
+          <button className="w-full border border-blue-500 text-blue-500 px-4 py-2 rounded">
+            Log in
+          </button>
+        </div>
+      </div>
+
+            <ul className=" bg-#f6f6f6 space-y-1 ">
                 {navItems.map(({ href, label, icon }) => {
                     const active = pathname === href
                     return (

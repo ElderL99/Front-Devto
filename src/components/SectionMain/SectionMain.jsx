@@ -16,7 +16,7 @@ export default function SectionMain() {
               </button>
             ))}
           </div>
-          {/* Aquí iría tu lista de posts */}
+          {/* Aquí iría la lista de posts */}
           <div>{/* <PostList posts={posts} /> */}</div>
         </div>
   
