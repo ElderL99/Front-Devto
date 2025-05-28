@@ -1,6 +1,7 @@
 // src/app/layout.js
 import { Geist, Geist_Mono } from "next/font/google"
 import Header from "@/components/Header/Header"
+import { AuthProvider } from "@/components/Auth/AuthContext"
 import "./globals.css"
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F6F6F6]`}
       >
-        <Header />
-        {/* Aquí va **solo** el contenido de cada ruta */}
-        {children}
+       
+        <AuthProvider>
+          <Header />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   )
