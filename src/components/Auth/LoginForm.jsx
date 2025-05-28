@@ -22,8 +22,8 @@ export default function LoginForm() {
     setError('')
     try {
       const { data } = await api.post('/auth/login', form)
-      // Guardamos el token en el contexto
-      login(data.token)
+      // Guardamos token y username en el contexto
+      login({ token: data.token, username: data.username })
       router.push('/')
     } catch (err) {
       console.error(err)

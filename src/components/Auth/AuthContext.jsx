@@ -3,44 +3,51 @@
 // src/components/Auth/AuthContext.jsx
 import React, { createContext, useState, useEffect } from 'react'
 
-// 1) Crea el contexto
+// Contexto de autenticación con token y username
 export const AuthContext = createContext({
   isAuth: false,
   token: null,
+  username: null,
   login: () => {},
   logout: () => {}
 })
 
-// 2) Proveedor del contexto
 export function AuthProvider({ children }) {
   const [isAuth, setIsAuth] = useState(false)
   const [token, setToken] = useState(null)
+  const [username, setUsername] = useState(null)
 
-  // Al montar, chequea localStorage
+  // Al montar, carga token y username desde localStorage
   useEffect(() => {
-    const stored = localStorage.getItem('token')
-    if (stored) {
-      setToken(stored)
+    const storedToken = localStorage.getItem('token')
+    const storedUser = localStorage.getItem('username')
+    if (storedToken && storedUser) {
+      setToken(storedToken)
+      setUsername(storedUser)
       setIsAuth(true)
     }
   }, [])
 
-  // Función para iniciar sesión
-  const login = (newToken) => {
+  // Función para iniciar sesión (guarda en estado y localStorage)
+  const login = ({ token: newToken, username: newUser }) => {
     localStorage.setItem('token', newToken)
+    localStorage.setItem('username', newUser)
     setToken(newToken)
+    setUsername(newUser)
     setIsAuth(true)
   }
 
-  // Función para cerrar sesión
+  // Función para cerrar sesión (limpia estado y localStorage)
   const logout = () => {
     localStorage.removeItem('token')
+    localStorage.removeItem('username')
     setToken(null)
+    setUsername(null)
     setIsAuth(false)
   }
 
   return (
-    <AuthContext.Provider value={{ isAuth, token, login, logout }}>
+    <AuthContext.Provider value={{ isAuth, token, username, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

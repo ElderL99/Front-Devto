@@ -1,6 +1,9 @@
 'use client'
+
+import { useContext } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { AuthContext } from '@/components/Auth/AuthContext'
 
 // src/components/Sidebar/Sidebar.jsx
 const navItems = [
@@ -11,7 +14,7 @@ const navItems = [
   { label: 'Tags', href: '/tags', icon: '/svg/tags.svg' },
   { label: 'DEV Help', href: '/help', icon: '/svg/help.svg' },
   { label: 'Forem Shop', href: '/shop', icon: '/svg/shop.svg' },
-  { label: 'Advertise on DEV', href: '/advertise', icon: '/svg/advertise.svg' },
+  { label: 'Advertise on DEV', href: '/advertise' },
   { label: 'DEV Challenges', href: '/challenges', icon: '/svg/challeng.svg' },
   { label: 'DEV Showcase', href: '/showcase', icon: '/svg/DEV show.svg' },
   { label: 'About', href: '/about', icon: '/svg/about.svg' },
@@ -38,26 +41,18 @@ const socialItems = [
 
 // Static popular tags as per design
 const popularTags = [
-  'webdev',
-  'programming',
-  'javascript',
-  'beginners',
-  'ai',
-  'productivity',
-  'tutorial',
-  'devops',
-  'python',
-  'react',
+  'webdev', 'programming', 'javascript', 'beginners',
+  'ai', 'productivity', 'tutorial', 'devops', 'python', 'react'
 ]
 
 export default function Sidebar() {
   const pathname = usePathname()
-  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+  const { isAuth } = useContext(AuthContext)
 
   return (
     <nav className="flex flex-col gap-5 rounded-lg shadow bg-[#f6f6f6]">
       {/* Cuenta (solo si no hay token) */}
-      {!token && (
+      {!isAuth && (
         <div className="p-4 bg-white">
           <h1 className="text-xl font-bold mb-2 text-black">
             DEV Community is a community of 3,171,657 amazing developers
@@ -90,7 +85,7 @@ export default function Sidebar() {
                     : 'text-gray-700 hover:bg-violet-100 hover:text-gray-900 hover:border-l-4 hover:border-indigo-600 hover:underline decoration-violet-500'
                 }`}
               >
-                <img src={icon} alt={label} className="w-6 h-6 flex-shrink-0" />
+                {icon && <img src={icon} alt={label} className="w-6 h-6 flex-shrink-0" />}
                 <span>{label}</span>
               </Link>
             </li>
@@ -134,7 +129,7 @@ export default function Sidebar() {
       {/* Popular Tags (estático) */}
       <div>
         <h2 className="px-3 mt-4 mb-2 text-xs font-semibold text-gray-500 uppercase">Popular Tags</h2>
-        <ul className="space-y-1 max-h-64 overflow-auto px-0 ">
+        <ul className="space-y-1 max-h-64 overflow-auto px-0">
           {popularTags.map(tag => (
             <li key={tag}>
               <Link
