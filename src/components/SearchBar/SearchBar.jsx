@@ -1,9 +1,8 @@
-// src/components/SearchBar.jsx
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { searchPosts } from '@/lib/api' // GET /posts/search?q=
+import { searchPosts } from '@/lib/api'
 
 export default function SearchBar() {
   const router = useRouter()
@@ -14,37 +13,30 @@ export default function SearchBar() {
   const inputRef = useRef(null)
   const timerRef = useRef(null)
 
-  // autocomplete con debounce
+  /* debounce */
   useEffect(() => {
     if (!query) {
       setHits([])
       return
     }
-
     clearTimeout(timerRef.current)
     timerRef.current = setTimeout(async () => {
-      try {
-        const data = await searchPosts(query) // /posts/search?q=
-        setHits(data)
-        setOpen(true)
-      } catch (err) {
-        console.error(err)
-      }
+      const data = await searchPosts(query)
+      setHits(data)
+      setOpen(true)
     }, 300)
-
     return () => clearTimeout(timerRef.current)
   }, [query])
 
-  // cerrar dropdown si hago click fuera
+  /* click-fuera */
   useEffect(() => {
-    const handler = e =>
+    const h = (e) =>
       inputRef.current && !inputRef.current.contains(e.target) && setOpen(false)
-    document.addEventListener('click', handler)
-    return () => document.removeEventListener('click', handler)
+    document.addEventListener('click', h)
+    return () => document.removeEventListener('click', h)
   }, [])
 
-  // enviar búsqueda completa
-  const submit = e => {
+  const submit = (e) => {
     e.preventDefault()
     if (!query.trim()) return
     router.push(`/search?q=${encodeURIComponent(query.trim())}`)
@@ -52,55 +44,60 @@ export default function SearchBar() {
   }
 
   return (
-    <form onSubmit={submit} className="relative flex-1 max-w-md">
+    <form onSubmit={submit} className="relative w-[460px] max-w-full">
+      {/* input */}
       <input
         ref={inputRef}
         type="text"
-        name="q"
         placeholder="Search..."
         value={query}
-        onChange={e => setQuery(e.target.value)}
+        onChange={(e) => setQuery(e.target.value)}
         onFocus={() => hits.length && setOpen(true)}
-        className="w-full h-10 pl-10 pr-32 border border-gray-300 rounded-md
+        className="w-full h-10 pl-10 pr-32 bg-white border border-gray-300 rounded-md text-sm
                    focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
 
-      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">🔍</span>
+      {/* icono lupa (svg) */}
+      <img
+        src="/svgHeader/search.svg"
+        className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-60"
+        alt=""
+      />
 
-      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">
+      {/* powered by */}
+      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] text-gray-500">
         Powered by API
       </span>
 
+      {/* dropdown */}
       {open && (
-        <div className="absolute z-30 mt-1 w-full bg-white border border-gray-200
-                        rounded-md shadow-lg overflow-hidden">
-          {hits.length === 0 && (
+        <div className="absolute z-30 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg overflow-hidden">
+          {hits.length === 0 ? (
             <p className="px-4 py-3 text-sm text-gray-500">No results…</p>
+          ) : (
+            hits.map((hit) => (
+              <a
+                key={hit._id}
+                href={`/posts/${hit._id}`}
+                className="block px-4 py-3 hover:bg-gray-50"
+                onClick={() => setOpen(false)}
+              >
+                <p className="text-xs text-gray-500">@{hit.username}</p>
+                <p className="font-semibold">{hit.title}</p>
+                <p className="text-xs text-gray-400">
+                  {new Date(hit.createdAt).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: '2-digit'
+                  })}
+                </p>
+              </a>
+            ))
           )}
-
-          {hits.map(hit => (
-            <a
-              key={hit._id}
-              href={`/posts/${hit._id}`}
-              className="block px-4 py-3 hover:bg-gray-50"
-              onClick={() => setOpen(false)}
-            >
-              <p className="text-xs text-gray-500">@{hit.username}</p>
-              <p className="font-semibold">{hit.title}</p>
-              <p className="text-xs text-gray-400">
-                {new Date(hit.createdAt).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: '2-digit',
-                })}
-              </p>
-            </a>
-          ))}
 
           <button
             type="submit"
-            className="w-full text-left px-4 py-2 bg-gray-100 text-sm
-                       hover:bg-gray-200 border-t border-gray-200"
+            className="w-full text-left px-4 py-2 bg-gray-100 text-sm hover:bg-gray-200 border-t border-gray-200"
           >
             Buscar «{query}»
           </button>

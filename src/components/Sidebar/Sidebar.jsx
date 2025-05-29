@@ -50,7 +50,7 @@ export default function Sidebar() {
   const { isAuth } = useContext(AuthContext)
 
   return (
-    <nav className="flex flex-col gap-5 rounded-lg shadow bg-[#f6f6f6]">
+    <nav className="flex flex-col gap-5 rounded-lg  bg-[#f6f6f6]">
       {/* Cuenta (solo si no hay token) */}
       {!isAuth && (
         <div className="p-4 bg-white">
