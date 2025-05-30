@@ -20,7 +20,7 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    // 401  limpia sesión
+    
     if (err.response?.status === 401 && typeof window !== 'undefined') {
       localStorage.removeItem('token');
       window.location.href = '/login';
@@ -32,7 +32,7 @@ api.interceptors.response.use(
 //  NUEVO: función de búsqueda
 export const searchPosts = (q, limit = 6) =>
   api
-    .get('/posts/search', { params: { q, limit } }) // ← endpoint correcto
+    .get('/posts/search', { params: { q, limit } }) 
     .then((r) => r.data);
 
 

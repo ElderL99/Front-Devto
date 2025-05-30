@@ -40,7 +40,7 @@ export default function PostCard({ post, showImage = false }) {
     content.length > 150 ? `${content.substring(0, 150)}…` : content
 
   return (
-    <article className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+    <article className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden ">
       {/* Imagen opcional */}
       {showImage && image && (
         <Link href={`/posts/${_id}`}>
@@ -56,8 +56,8 @@ export default function PostCard({ post, showImage = false }) {
       )}
 
       {/* Usuario + fecha */}
-      <div className="p-6">
-        <div className="flex items-center gap-2">
+      <div className="p-5">
+        <div className="flex items-center gap-2 ">
           <Image
             src={avatarUrl}
             alt={author.username}
