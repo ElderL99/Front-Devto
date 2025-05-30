@@ -44,7 +44,7 @@ export default function SearchBar() {
   }
 
   return (
-    <form onSubmit={submit} className="relative w-[460px] max-w-full">
+    <form onSubmit={submit} className="relative w-[650px] max-w-full">
       {/* input */}
       <input
         ref={inputRef}
@@ -53,7 +53,7 @@ export default function SearchBar() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onFocus={() => hits.length && setOpen(true)}
-        className="w-full h-10 pl-10 pr-32 bg-white border border-gray-300 rounded-md text-sm
+        className="w-full h-9 pl-10 pr-32 bg-white border border-gray-300 rounded-md text-sm
                    focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
 
@@ -66,7 +66,7 @@ export default function SearchBar() {
 
       {/* powered by */}
       <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] text-gray-500">
-        Powered by API
+        Powered by <img src="/svgHeader/algolia.svg" alt="Algolia" className="inline-block w-4 h-4" /> Algolia
       </span>
 
       {/* dropdown */}

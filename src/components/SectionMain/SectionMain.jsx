@@ -33,24 +33,24 @@ export default function SectionMain() {
   }, [query])
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-2">
       {!query && (
-        <div className="bg-[#F6F6F6] p-4 rounded-lg flex gap-4">
+        <div className="bg-[#F6F6F6] rounded-lg flex gap-4">
           <button
             onClick={() => fetchPosts('/posts/relevant')}
-            className="px-4 py-2 bg-white rounded shadow hover:bg-gray-100"
+            className="px-4 py-2 font-bold  hover:text-[#3B49DF]"
           >
             Relevant
           </button>
           <button
             onClick={() => fetchPosts('/posts/latest')}
-            className="px-4 py-2 bg-white rounded shadow hover:bg-gray-100"
+            className="px-4 py-2  hover:text-[#3B49DF]"
           >
             Latest
           </button>
           <button
             onClick={() => fetchPosts('/posts')}
-            className="px-4 py-2 bg-white rounded shadow hover:bg-gray-100"
+            className="px-4 py-2  hover:text-[#3B49DF]"
           >
             Top
           </button>

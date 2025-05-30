@@ -51,12 +51,12 @@ export default function Header() {
           {/* Auth / avatar */}
           {!isAuth ? (
             <>
-              <Link href="/login" className="text-gray-700 hover:underline">
+              <Link href="/login" className="text-gray-700 hover:cursor-pointer hover:underline hover:text-indigo-600 hover:bg-indigo-50 px-4 py-1 rounded-md">
                 Log in
               </Link>
               <Link
                 href="/register"
-                className="px-4 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+                className="px-4 py-1  text-indigo-600 border border-indigo-600 rounded hover:bg-blue-900 hover:cursor-pointer hover:underline hover:text-white"
               >
                 Create account
               </Link>

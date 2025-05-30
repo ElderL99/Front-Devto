@@ -1,4 +1,4 @@
-// src/hooks/useReactions.js
+
 import { useState, useEffect } from 'react'
 import { getReactions, toggleReaction, EMOJI_MAP } from '@/lib/reactions'
 
