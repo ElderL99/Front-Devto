@@ -15,27 +15,28 @@ const providers = [
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F6F6F6] p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md overflow-hidden">
+    <div className=" flex items-center justify-center  bg-[#F6F6F6] p-4">
+      <div className="w-full max-w-md bg-[#F6F6F6]  ">
         <div className="p-6 space-y-6">
           {/* Logo + título */}
           <div className="text-center">
             <img
               src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png"
               alt="DEV Logo"
-              className="mx-auto h-12 w-12 mb-4"
+              className="mx-auto h-12 w-15 mb-4"
             />
-            <h1 className="text-2xl font-bold">
-              Log in to your account
-            </h1>
+            <h2 className="text-3xl font-bold">
+            Join the DEV Community
+            </h2>
+            <p className="text-gray-500">DEV Community is a community of 3,187,701 amazing developers</p>
           </div>
 
           {/* botones de login */}
-          <div className="space-y-2">
+          <div className=" space-y-2  w-full mx-[-80px]">
             {providers.map((prov) => (
               <button
                 key={prov.name}
-                className="w-full flex items-center justify-start border border-gray-200 rounded-lg px-4 py-2 hover:shadow transition-shadow"
+                className="w-[600px] h-[50px] flex items-center justify-start border border-gray-200 rounded-lg px-4 py-2 hover:shadow transition-shadow"
               >
                 <img
                   src={prov.icon}
