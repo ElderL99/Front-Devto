@@ -2,6 +2,7 @@
 'use client'
 
 import LoginForm from '@/components/Auth/LoginForm'
+import Link from 'next/link'
 
 const providers = [
   { name: 'Apple',    icon: '/SvgLogin/apple.svg' },
@@ -20,11 +21,13 @@ export default function LoginPage() {
         <div className="p-6 space-y-6">
           {/* Logo + título */}
           <div className="text-center">
-            <img
-              src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png"
-              alt="DEV Logo"
-              className="mx-auto h-12 w-15 mb-4"
-            />
+            <Link href="/">
+              <img
+                src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png"
+                alt="DEV Logo"
+                className="mx-auto h-12 w-15 mb-4 hover:cursor-pointer"
+              />
+            </Link>
             <h2 className="text-3xl font-bold">
             Join the DEV Community
             </h2>
