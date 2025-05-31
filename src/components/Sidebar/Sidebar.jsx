@@ -64,7 +64,7 @@ export default function Sidebar() {
             <Link href="/register" className="w-full bg-white border border-[#3B49DF] text-[#3B49DF] px-4 py-2 rounded text-center hover:bg-[#3B49DF] hover:text-white transition-colors hover:underline hover:font-bold">
               Create account
             </Link>
-            <Link href="/login" className="w-full text-gray-700 px-4 py-2 rounded text-center">
+            <Link href="/login" className="w-full text-gray-700 px-4 py-2 rounded text-center hover:bg-[#EBECFC] hover:text-[#3B49DF] transition-colors hover:underline ">
               Log in
             </Link>
           </div>
