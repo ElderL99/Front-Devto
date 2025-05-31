@@ -50,10 +50,10 @@ export default function Sidebar() {
   const { isAuth } = useContext(AuthContext)
 
   return (
-    <nav className="flex flex-col gap-5 rounded-lg  bg-[#f6f6f6]">
+    <nav className="flex flex-col  gap-5 rounded-lg  bg-[#f6f6f6]">
       {/* Cuenta (solo si no hay token) */}
       {!isAuth && (
-        <div className="p-4 bg-white">
+        <div className="p-4 bg-white w-[250px] rounded-lg">
           <h1 className="text-xl font-bold mb-2 text-black">
             DEV Community is a community of 3,171,657 amazing developers
           </h1>
@@ -61,10 +61,10 @@ export default function Sidebar() {
             We're a place where coders share, stay up-to-date and grow their careers.
           </p>
           <div className="flex flex-col gap-2">
-            <Link href="/register" className="w-full bg-blue-500 text-white px-4 py-2 rounded text-center">
+            <Link href="/register" className="w-full bg-white border border-[#3B49DF] text-[#3B49DF] px-4 py-2 rounded text-center hover:bg-[#3B49DF] hover:text-white transition-colors hover:underline hover:font-bold">
               Create account
             </Link>
-            <Link href="/login" className="w-full border border-blue-500 text-blue-500 px-4 py-2 rounded text-center">
+            <Link href="/login" className="w-full text-gray-700 px-4 py-2 rounded text-center">
               Log in
             </Link>
           </div>
@@ -95,7 +95,7 @@ export default function Sidebar() {
 
       {/* Other */}
       <div>
-        <h2 className="px-3 mt-4 mb-2 text-xs font-semibold text-gray-500 uppercase">Other</h2>
+        <h2 className="px-3 mt-4 mb-2  text-xs font-semibold text-gray-500 uppercase">Other</h2>
         <ul className="space-y-1 px-0">
           {otherItems.map(({ href, label, emoji }) => (
             <li key={href}>

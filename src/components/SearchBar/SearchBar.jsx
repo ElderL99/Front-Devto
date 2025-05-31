@@ -13,7 +13,7 @@ export default function SearchBar() {
   const inputRef = useRef(null)
   const timerRef = useRef(null)
 
-  /* debounce */
+
   useEffect(() => {
     if (!query) {
       setHits([])

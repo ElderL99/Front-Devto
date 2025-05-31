@@ -47,8 +47,8 @@ export default function PostCard({ post, showImage = false }) {
           <Image
             src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api', '')}${image}`}
             alt={title}
-            width={1280}
-            height={640}
+            width={1920}
+            height={1080}
             className="w-full h-56 sm:h-64 object-cover"
             priority={false}
           />
@@ -97,31 +97,31 @@ export default function PostCard({ post, showImage = false }) {
           </div>
         )}
 
-{/* Contador + icono */}
-            
-        
+        {/* Contador + icono */}
+
+
         <div className="flex items-center gap-5 text-sm text-gray-600 mt-2">
           {/* Reacciones siempre visibles */}
           <ReactionBar postId={_id} variant="feed" />
           <div className="flex ">
-              <Image
-                src="/svg/coment.svg"
-                alt="comments"
-                width={25}
-                height={25}
-              />
-              <span>{preview.length}</span>
-            </div>
+            <Image
+              src="/svg/coment.svg"
+              alt="comments"
+              width={25}
+              height={25}
+            />
+            <span>{preview.length}</span>
+          </div>
         </div>
-       
-        
+
+
 
         {/* Comentarios y preview SOLO si hay token */}
         {isAuth && (
           <>
-            
 
-           
+
+
             <div className="mt-2 space-y-3">
               {isLoading && (
                 <p className="text-sm text-gray-400">Loading…</p>
@@ -130,7 +130,7 @@ export default function PostCard({ post, showImage = false }) {
               {preview.map((c) => (
                 <div key={c._id} className="flex gap-2 bg-gray-100 p-2 rounded-lg hover:bg-gray-200 hover:cursor-pointer">
                   <Image
-                    
+
                     src={`https://i.pravatar.cc/32?u=${encodeURIComponent(c.author._id)}`}
                     alt={c.author.username}
                     width={32}

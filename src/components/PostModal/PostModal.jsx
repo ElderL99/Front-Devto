@@ -1,7 +1,7 @@
 'use client' 
 
 import React from 'react'
-import { X } from 'lucide-react'       // o cualquier icono de cerrar
+import { X } from 'lucide-react'      
 import PostCard from '../PostCard/PostCard'
 import CommentsSection from '../CommentsSection/CommentsSection'
 
@@ -9,11 +9,11 @@ export default function PostModal({ post, onClose }) {
   return (
     <div
       className="fixed inset-0 z-50 flex justify-center items-start pt-16 bg-black/30"
-      onClick={onClose}            // cerrar al hacer click fuera del contenedor
+      onClick={onClose}            
     >
       <div
         className="bg-white max-w-2xl w-full max-h-[90vh] overflow-auto rounded-lg shadow-lg relative"
-        onClick={e => e.stopPropagation()}  // evita cerrar al clicear adentro
+        onClick={e => e.stopPropagation()}  
       >
         {/* Botón de cerrar */}
         <button

@@ -3,7 +3,7 @@
 
 import useSWR from 'swr'
 
-const API = process.env.NEXT_PUBLIC_API_URL   // ej. http://localhost:4000/api
+const API = process.env.NEXT_PUBLIC_API_URL   // http://localhost:4000/api
 const fetcher = (url) => fetch(url).then((r) => r.json())
 
 export default function useComments(postId, limit = 2, enabled = true) {

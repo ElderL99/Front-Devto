@@ -1,4 +1,4 @@
-// src/components/SectionMain/SectionMain.js
+
 'use client'
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'

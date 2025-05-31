@@ -1,4 +1,4 @@
-// src/components/Section3/Section3.jsx
+
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -106,12 +106,12 @@ export default function Section3() {
         <p className="text-xs  text-gray-600 tracking-wide mb-2 hover:cursor-pointer hover:text-black  ">
           trending postsck 
         </p>
-        <ul className="space-y-2 w-[200px] h-[200px] overflow-y-auto ">
+        <ul className="space-y-2 w-[300px] h-[300px]  ">
           {trendingPosts.map((p) => (
             <li key={p._id}>
               <Link
                 href={`/posts/${p._id}`}
-                className="bg-[#F6F6F6] text-md gap-4  text-gray-600 hover:text-[#3B49DF] hover:cursor-pointer hover:text-blue-900 "
+                className="bg-[#F6F6F6] p-4 text-md flex flex-col justify-center  w-[300px] h-[50px]  text-gray-600 hover:text-[#3B49DF] hover:cursor-pointer hover:text-blue-900  hover:border-b-2 hover:bg-white "
               >
                 {p.title}
               </Link>

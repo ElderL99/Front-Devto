@@ -1,6 +1,6 @@
-
+// src/app/layout.js
 import { Geist, Geist_Mono } from "next/font/google"
-import Header from "@/components/Header/Header"
+
 import { AuthProvider } from "@/components/Auth/AuthContext"
 import "./globals.css"
 
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F6F6F6]`}
       >
         <AuthProvider>
-          <Header />
+          
           {children}
         </AuthProvider>
       </body>
