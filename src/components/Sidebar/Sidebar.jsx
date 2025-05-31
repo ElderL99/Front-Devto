@@ -8,34 +8,34 @@ import { AuthContext } from '@/components/Auth/AuthContext'
 // src/components/Sidebar/Sidebar.jsx
 const navItems = [
   { label: 'Home', href: '/', icon: '/svg/home.svg' },
-  { label: 'DEV++', href: '/++', icon: '/svg/DEV++.svg' },
-  { label: 'Podcasts', href: '/podcasts', icon: '/svg/Podcasts.svg' },
-  { label: 'Videos', href: '/videos', icon: '/svg/videos.svg' },
-  { label: 'Tags', href: '/tags', icon: '/svg/tags.svg' },
-  { label: 'DEV Help', href: '/help', icon: '/svg/help.svg' },
-  { label: 'Forem Shop', href: '/shop', icon: '/svg/shop.svg' },
-  { label: 'Advertise on DEV', href: '/advertise' },
-  { label: 'DEV Challenges', href: '/challenges', icon: '/svg/challeng.svg' },
-  { label: 'DEV Showcase', href: '/showcase', icon: '/svg/DEV show.svg' },
-  { label: 'About', href: '/about', icon: '/svg/about.svg' },
-  { label: 'Contact', href: '/contact', icon: '/svg/Contact.svg' },
-  { label: 'Free Postgres Database', href: '/free-postgres-database-tier', icon: '/svg/elefante.svg' },
-  { label: 'Software comparisons', href: '/software-comparisons', icon: '/svg/comparation.svg' },
+  { label: 'DEV++', href: 'https://dev.to/++', icon: '/svg/DEV++.svg' },
+  { label: 'Podcasts', href: 'https://dev.to/podcasts', icon: '/svg/Podcasts.svg' },
+  { label: 'Videos', href: 'https://dev.to/videos', icon: '/svg/videos.svg' },
+  { label: 'Tags', href: 'https://dev.to/tags', icon: '/svg/tags.svg' },
+  { label: 'DEV Help', href: 'https://dev.to/help', icon: '/svg/help.svg' },
+  { label: 'Forem Shop', href: 'https://dev.to/shop', icon: '/svg/shop.svg' },
+  { label: 'Advertise on DEV', href: 'https://dev.to/advertise' },
+  { label: 'DEV Challenges', href: 'https://dev.to/challenges', icon: '/svg/challeng.svg' },
+  { label: 'DEV Showcase', href: 'https://dev.to/showcase', icon: '/svg/DEV show.svg' },
+  { label: 'About', href: 'https://dev.to/about', icon: '/svg/about.svg' },
+  { label: 'Contact', href: 'https://dev.to/contact', icon: '/svg/Contact.svg' },
+  { label: 'Free Postgres Database', href: 'https://dev.to/free-postgres-database-tier', icon: '/svg/elefante.svg' },
+  { label: 'Software comparisons', href: 'https://dev.to/software-comparisons', icon: '/svg/comparation.svg' },
 ]
 
 const otherItems = [
-  { label: 'Code of Conduct', href: '/code-of-conduct', emoji: '👍' },
-  { label: 'Privacy Policy', href: '/privacy-policy', emoji: '🤓' },
-  { label: 'Terms of use', href: '/terms-of-use', emoji: '👀' },
+  { label: 'Code of Conduct', href: 'https://dev.to/code-of-conduct', emoji: '👍' },
+  { label: 'Privacy Policy', href: 'https://dev.to/privacy-policy', emoji: '🤓' },
+  { label: 'Terms of use', href: 'https://dev.to/terms', emoji: '👀' },
 ]
 
 const socialItems = [
-  { href: 'https://twitter.com/tu_usuario', icon: '/svgRedes/x.svg', alt: 'X' },
-  { href: 'https://facebook.com/tu_pagina', icon: '/svgRedes/facebook.svg', alt: 'Facebook' },
-  { href: 'https://github.com/tu_usuario', icon: '/svgRedes/git.svg', alt: 'GitHub' },
-  { href: 'https://instagram.com/tu_usuario', icon: '/svgRedes/insta.svg', alt: 'Instagram' },
-  { href: 'https://twitch.tv/tu_usuario', icon: '/svgRedes/twicht.svg', alt: 'Twitch' },
-  { href: 'https://mastodon.social/@tu_usuario', icon: '/svgRedes/m.svg', alt: 'Mastodon' },
+  { href: '/', icon: '/svgRedes/x.svg', alt: 'X' },
+  { href: '/', icon: '/svgRedes/facebook.svg', alt: 'Facebook' },
+  { href: '/', icon: '/svgRedes/git.svg', alt: 'GitHub' },
+  { href: '/', icon: '/svgRedes/insta.svg', alt: 'Instagram' },
+  { href: '/', icon: '/svgRedes/twicht.svg', alt: 'Twitch' },
+  { href: '/', icon: '/svgRedes/m.svg', alt: 'Mastodon' },
   { href: 'https://ejemplo.com', icon: '/svgRedes/mariposa.svg', alt: 'Mariposa' },
 ]
 
