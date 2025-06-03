@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null)
   const [username, setUsername] = useState(null)
 
-  // Al montar, carga token y username desde localStorage
+  // Al iniciar, carga token y username desde localStorage
   useEffect(() => {
     const storedToken = localStorage.getItem('token')
     const storedUser = localStorage.getItem('username')
@@ -32,12 +32,12 @@ export function AuthProvider({ children }) {
   const login = ({ token: newToken, username: newUser }) => {
     localStorage.setItem('token', newToken)
     localStorage.setItem('username', newUser)
-    setToken(newToken)
+    setToken(newToken)  
     setUsername(newUser)
     setIsAuth(true)
   }
 
-  // Función para cerrar sesión (limpia estado y localStorage)
+  // Función para cerrar sesión (limpia es  tado y localStorage)
   const logout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('username')
