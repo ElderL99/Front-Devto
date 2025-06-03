@@ -19,16 +19,19 @@ export default async function PostPage({ params }) {
   const post = await res.json()
 
   return (
-    <div className=" md:max-w-screen-lg mx-auto px-4 py-8 w-full  ">
+    <div className="w-full">
       <div className="grid grid-cols-1  md:grid-cols-[1fr_3fr_1fr] gap-6">
         {/* ───────────────────── SIDEBAR IZQ (vacío o contenido estático) ───────────────────── */}
-        <aside className="hidden lg:block">
-       
+        <aside className=" hidden lg:block">
+          {/* ───────────────────── SIDEBAR IZQ (vacío o contenido estático) ───────────────────── */}
+
+
+
         </aside>
 
         {/* ───────────────────── CONTENIDO PRINCIPAL ───────────────────── */}
-        <main className="w-[350px] mx-auto space-y-8 md:w-[800px]">
-          <article className="bg-white p-6 rounded-lg shadow">
+        <main className="  md:w-[350px] mx-auto space-y-8 lg:w-[800px]">
+          <article className="sm:w-full p-1 md:p-4 w-full lg:w-[800px]">
             {post.image && (
               <img
                 src={`${process.env.NEXT_PUBLIC_API_URL.replace('/api','')}${post.image}`}
