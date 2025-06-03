@@ -10,7 +10,7 @@ export default function MainLayout({ children }) {
       <Header />
 
       
-      <div className="w-full h-full gap-4 md:gap-4 p-4 max-w-screen-xl mx-auto grid grid-cols-[1fr_3fr_1fr] ">
+      <div className="w-full lg:max-w-screen-xl lg:mx-auto lg:p-4 lg:grid lg:grid-cols-[1fr_3fr_1fr] lg:gap-4 ">
         {children}
       </div>
     </>

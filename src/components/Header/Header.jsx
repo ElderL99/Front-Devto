@@ -88,7 +88,7 @@ export default function Header() {
                       <ul className="divide-y divide-gray-100 bg-white">
                         <li>
                           <Link
-                            href="/dashboard"
+                            href="/"
                             className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                           >
                             Dashboard
@@ -96,7 +96,7 @@ export default function Header() {
                         </li>
                         <li>
                           <Link
-                            href="/reading-list"
+                            href="/"
                             className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                           >
                             Reading list
@@ -104,7 +104,7 @@ export default function Header() {
                         </li>
                         <li>
                           <Link
-                            href="/settings"
+                            href="/"
                             className="block px-4 py-2 hover:bg-gray-100 text-gray-700"
                           >
                             Settings
