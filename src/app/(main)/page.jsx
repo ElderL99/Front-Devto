@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <aside className="hidden md:block"><Sidebar/></aside>
       <main><SectionMain/></main>
-      <aside className="hidden lg:block"><Section3/></aside>
+      <aside className="hidden md:block"><Section3/></aside>
     </>
   )
 }

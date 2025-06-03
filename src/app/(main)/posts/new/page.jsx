@@ -86,17 +86,17 @@ export default function CreatePostPage() {
   }
 
   return (
-    <div className="min-h-screen  bg-[#F6F6F6] py-8">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-[3fr_1fr] bg-white rounded-lg overflow-hidden ">
+    <div className=" w-full h-full bg-[#F6F6F6] py-8 ">
+      <div className=" lg:w-[1200px] lg:mx-auto ">
+        <div className="lg:grid lg:grid-cols-[3fr_1fr] bg-white rounded-lg overflow-hidden  ">
          
-          <form onSubmit={handleSubmit} className="p-6 space-y-6">
+          <form onSubmit={handleSubmit} className="p-6 space-y-6 sm:w-[300px] md:w-[500px] lg:w-[800px]">
             {/* Cover image */}
-            <div>
+            <div className="flex flex-col gap-2 w-[350px] ">
               <button
                 type="button"
                 onClick={handleImageClick}
-                className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50"
+                className="     border border-gray-300 rounded hover:bg-gray-50  w-full h-[48px] "
               >
                 {imageFile ? 'Change cover image' : 'Add a cover image'}
               </button>
@@ -124,7 +124,7 @@ export default function CreatePostPage() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
-                className="w-full text-5xl placeholder-[#525252]  font-bold focus:outline-none "
+                className=" text-3xl placeholder-[#525252]  font-bold focus:outline-none md:text-5xl"
               />
             </div>
 
@@ -162,7 +162,7 @@ export default function CreatePostPage() {
             </div>
 
             {/* Toolbar */}
-            <div className="flex items-center space-x-4 border-t border-b border-gray-200 py-2">
+            <div className="flex items-center gap-1 md:gap-2 lg:gap-4 ">
               {[Bold, Italic, LinkIcon, List, ListOrdered, Type, Quote, Code, Zap, ImageIcon].map(
                 (Icon, i) => (
                   <button key={i} type="button" className="p-1 hover:bg-gray-100 rounded">
@@ -209,7 +209,7 @@ export default function CreatePostPage() {
           </form>
 
           
-          <aside className="p-6 bg-[#F6F6F6]">
+          <aside className="hidden lg:block p-6 bg-[#F6F6F6]">
             
             <h4 className="font-semibold mb-2">Writing a Great Post Title</h4>
             <ul className="list-disc list-inside space-y-1">
