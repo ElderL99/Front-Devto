@@ -1,8 +1,12 @@
 // app/search/page.jsx
+
 import React from 'react'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import SectionMain from '@/components/SectionMain/SectionMain'
 import Section3 from '@/components/Section3/Section3'
+import { Suspense } from 'react'
+
+
 
 export default function SearchPage() {
   return (
@@ -14,7 +18,7 @@ export default function SearchPage() {
 
       {/* columna central: SectionMain detecta ?q= y hace la búsqueda */}
       <main>
-        <SectionMain />
+        <Suspense><SectionMain /></Suspense>
       </main>
 
       {/* columna derecha */}
