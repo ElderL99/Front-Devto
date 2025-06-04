@@ -1,6 +1,6 @@
 # Dev.to Clone – README Drafts
 
-Below you’ll find **two independent README drafts**—one for the **frontend** (`Front-Devto`) and one for the **backend** (`Apidevto`).
+
 
 ---
 
